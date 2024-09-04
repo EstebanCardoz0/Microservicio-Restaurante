@@ -1,0 +1,15 @@
+package org.example.ingrediente_micro;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class IngredienteMicroApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(
+                IngredienteMicroApplication.class,
+                args);
+    }
+
+}
