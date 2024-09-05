@@ -22,22 +22,32 @@ public class IngredienteService
     @Override public void crearIngrediente(
             Ingrediente ingrediente) {
 
-
+        ingredienteRepo.save(ingrediente);
     }
 
     @Override public void editarIngrediente(
             Ingrediente ingrediente, Long id) {
 
+        Ingrediente ingre =
+                this.buscarIngrediente(id);
+        ingre.setNombre_ingrediente(
+                ingrediente.getNombre_ingrediente());
+        ingre.setLista_platos(
+                ingrediente.getLista_platos());
+        this.crearIngrediente(ingre);
+
     }
 
     @Override
     public void eliminarIngrediente(Long id) {
-
+        ingredienteRepo.deleteById(id);
     }
 
     @Override
     public Ingrediente buscarIngrediente(
             Long id) {
-        return null;
+        return ingredienteRepo.findById(id)
+                .orElse(null);
+
     }
 }
