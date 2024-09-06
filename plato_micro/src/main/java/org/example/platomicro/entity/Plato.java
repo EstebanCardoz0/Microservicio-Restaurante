@@ -17,11 +17,7 @@ public class Plato {
     private String nombre;
     private Double precio;
     private String descripcion;
-    @ManyToMany
-    @JoinTable(
-            name = "plato_ingrediente",
-            joinColumns = @JoinColumn(name = "plato_id"),
-            inverseJoinColumns = @JoinColumn(name = "ingrediente_id")
-    )
-    private List<Ingrediente> ingredientes;
+    @ElementCollection(
+            fetch = FetchType.EAGER)
+    private List<String> ingredientes;
 }

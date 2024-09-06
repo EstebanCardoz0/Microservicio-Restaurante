@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface IPlatoService {
 
-    public void savePlato(Plato plato);
+    public void savePlato(String nombre,
+                          Double precio,
+                          String descripcion);
 
     public void updatePlato(Plato plato, Long id);
 

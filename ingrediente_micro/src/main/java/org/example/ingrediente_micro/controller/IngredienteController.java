@@ -20,6 +20,13 @@ public class IngredienteController {
 
     }
 
+    @GetMapping("/traerp/{nombrePlato}")
+    public List<Ingrediente> traerIngredientesByPlato(
+            @PathVariable String nombrePlato) {
+        return ingreServ.getIngredienteByPlato(
+                nombrePlato);
+    }
+
     @PutMapping("/editar/{id}")
     public Ingrediente editarIngrediente(
             @RequestBody

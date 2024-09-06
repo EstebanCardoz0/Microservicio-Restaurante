@@ -50,4 +50,11 @@ public class IngredienteService
                 .orElse(null);
 
     }
+
+    @Override
+    public List<Ingrediente> getIngredienteByPlato(
+            String nombrePlato) {
+        return ingredienteRepo.findByNombre(
+                nombrePlato);
+    }
 }

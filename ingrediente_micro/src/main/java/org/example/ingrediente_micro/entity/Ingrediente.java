@@ -15,6 +15,6 @@ public class Ingrediente {
             strategy = GenerationType.IDENTITY)
     private Long id_ingrediente;
     private String nombre_ingrediente;
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     private List<String> lista_platos;
 }

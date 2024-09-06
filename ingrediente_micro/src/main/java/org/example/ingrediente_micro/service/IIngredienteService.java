@@ -17,4 +17,7 @@ public interface IIngredienteService {
     public void eliminarIngrediente(Long id);
 
     public Ingrediente buscarIngrediente(Long id);
+
+    public List<Ingrediente> getIngredienteByPlato(
+            String nombrePlato);
 }
